@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar dense elevation="1" class="navPrincipal blue lighten-3">
+    <v-toolbar dense elevation="1" class="navPrincipal purple lighten-4">
       <v-toolbar-title>
         <h5 class="white--text">
           Giovanni Di Rosa
@@ -28,7 +28,7 @@
             <v-icon left class="white--text">{{ link.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="white--text">{{
+            <v-list-item-title class="textNavigation">{{
               link.text
             }}</v-list-item-title>
           </v-list-item-content>
@@ -45,9 +45,17 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: "mdi-heart", text: "Inicio", route: "/" },
-        { icon: "mdi-ticket", text: "Galeria", route: "/galeria" },
-        { icon: "mdi-music", text: "Quien soy", route: "/quiensoy" },
+        { icon: "mdi-adjust", text: "Inicio", route: "/" },
+        {
+          icon: "mdi-heart-circle-outline",
+          text: "Galería",
+          route: "/galeria",
+        },
+        {
+          icon: "mdi-account-star-outline",
+          text: "Quien soy",
+          route: "/quiensoy",
+        },
       ],
       dialog: false,
       show1: false,
@@ -56,4 +64,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.textNavigation {
+  color: #001b48;
+}
+</style>

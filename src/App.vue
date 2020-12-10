@@ -33,7 +33,4 @@ html,
 body {
   font-family: "Lato", sans-serif;
 }
-.main {
-  background: #d6e8ee;
-}
 </style>
