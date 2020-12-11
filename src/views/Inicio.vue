@@ -15,12 +15,18 @@
                 Di Rosa.
               </h5>
               <p class="parrafo_titulo text-caption text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                culpa officia itaque nostrum consequuntur unde ut rem, et
-                labore. Harum perspiciatis qui maiores expedita nisi pariatur
-                alias consectetur tempora laborum, laboriosam iusto eveniet
-                quisquam nostrum iste hic veniam cum nobis quos accusantium
-                totam ad eos! Excepturi quis vel officiis mollitia.
+                Soy desarrollador front-end y diseñador gráfico de profesión.
+                Siempre con ganas de incorporar nuevas habilidades y de
+                enfrentar desafíos que me hagan crecer tanto personal como
+                profesionalmente. He incorporado herramientas de trabajo que
+                permitieron mi formación como desarrollador front-end y
+                diseñador UI, construyendo plataformas digitales que den
+                soluciones eficientes e innovadoras a quienes lo necesiten,
+                además de ser parte de equipos de trabajo en donde se comparten
+                conocimientos y habilidades personales, utilizando metodologías
+                ágiles SCRUM. Me caracterizo por tener una mente inquieta,
+                sentido social y espíritu creador, y esto es lo que busco
+                aportar a un equipo de trabajo.
               </p>
             </div>
           </v-col>
@@ -44,6 +50,8 @@
     </div>
     <!-- FINAL DIV CON WIDTH 300 -->
 
+    <!-- SECTION DO -->
+
     <div class="section_do">
       <v-container>
         <v-row>
@@ -54,42 +62,39 @@
           </v-col>
           <v-col>
             <div class="parrafo_do">
-              <h5>
+              <h5 class="py-3">
                 work
               </h5>
               <p class=" text-caption text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                id eveniet iste. Tempore nobis eveniet dolorem iure dolores
-                explicabo in error provident ullam aspernatur consequatur velit
-                beatae dicta ipsum quasi, ratione iste nihil consequuntur dolore
-                laboriosam voluptas consectetur suscipit! Culpa, qui
-                praesentium? Laboriosam provident reiciendis non! Consectetur
-                suscipit ab aspernatur voluptatibus eos reiciendis sequi
-                perferendis culpa ullam. Velit unde, alias rem, necessitatibus
-                ut molestiae doloremque voluptate veniam sit quidem distinctio
-                inventore suscipit ducimus? Tempora labore repellendus dolorem
-                hic optio illo vel voluptates repellat molestias culpa
-                recusandae, quae iure voluptatibus reiciendis perferendis ea
-                similique ex ad consequuntur consequatur placeat eaque. Dolor
-                provident magni unde, quia possimus neque adipisci mollitia
-                necessitatibus enim non incidunt, dolores iste ex ipsam natus
-                quisquam odit corrupti.
+                Software developer, disfruto probar nuevas tecnologías por eso
+                es que estoy siempre preparado para aprender e integrar nuevos
+                conocimientos y habilidades. Me caracterizo por tener capacidad
+                de adaptación, compromiso con las actividades que desarrollo y
+                responsabilidad.
               </p>
+              <v-btn>
+                Experiencia
+              </v-btn>
             </div>
           </v-col>
         </v-row>
       </v-container>
     </div>
+    <!-- FINAL SECTION DO -->
+
+    <Education />
   </div>
 </template>
 
 <script>
 import ParallaxInicio from "@/components/inicio/ParallaxInicio.vue";
+import Education from "@/components/inicio/Education.vue";
 
 export default {
   name: "Inicio",
   components: {
     ParallaxInicio,
+    Education,
   },
 };
 </script>
