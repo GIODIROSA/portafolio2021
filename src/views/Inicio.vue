@@ -52,7 +52,7 @@
 
     <Do />
 
-    <Education />
+    <Education :educations="educations" />
   </div>
 </template>
 
@@ -60,9 +60,13 @@
 import ParallaxInicio from "@/components/inicio/ParallaxInicio.vue";
 import Education from "@/components/inicio/Education.vue";
 import Do from "@/components/inicio/Do.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Inicio",
+  computed: {
+    ...mapState("Inicio",["educations"]),
+  },
   components: {
     ParallaxInicio,
     Do,
@@ -87,13 +91,11 @@ export default {
   }
 }
 
-
-
 @media only screen and (min-width: 300px) and (max-width: 960px) {
   .parallaxInicio {
     display: none;
   }
-  
+
   .parallaxAlternativo {
     padding: 150px 0px;
     background-image: url("../assets/img/gio_fotografia.png");
@@ -111,6 +113,5 @@ export default {
   .parallaxAlternativo {
     display: none;
   }
- 
 }
 </style>

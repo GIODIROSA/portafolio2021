@@ -17,6 +17,7 @@ export default {
         await firebase
           .firestore()
           .collection("education")
+          .orderBy("annos", "desc")
           .onSnapshot((snapshot) => {
             let educacion = [];
             snapshot.forEach((doc) => {

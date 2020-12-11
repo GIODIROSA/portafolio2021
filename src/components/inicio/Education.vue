@@ -27,39 +27,26 @@
       </v-row>
       <!-- MODAL -->
       <v-dialog v-model="dialog" width="800">
-        <v-card>
-          <v-card-title>
-            Education
-          </v-card-title>
-          <v-card-subtitle class="font-weight-bold">
-            Centro Instituto de Diseño Gráfico CIDIG
-          </v-card-subtitle>
-          <v-card-text>
-            Diplomado en ilustración (2005-2008) <br />
-            Diplomado en Diseño Gráfico (2006-2009)
-          </v-card-text>
-          <v-card-subtitle class="font-weight-bold">
-            Universidad Centroccidental "Lisandro Alvarado" UCLA
-          </v-card-subtitle>
-          <v-card-subtitle class="font-weight-bold">
-            Decanato Experimental de Humanidades y Artes.
-          </v-card-subtitle>
-          <v-card-text>
-            Licenciado en Artes Plástica (2008-2013) <br />
-            Mención Honorifica Cumlaude. Universidad Centroccidental “Lisandro
-            Alvarado” UCLA. Posición #3.
-          </v-card-text>
-          <v-card-subtitle class="font-weight-bold">
-            Academia Desafío Latam
-          </v-card-subtitle>
-          <v-card-text>
-            Front end Developer (2020) <br />
-            Experiencia en VueJS - Preparanción en REACT.
-          </v-card-text>
-          <v-btn @click="accionarEducation">
-            cerrar
-          </v-btn>
+        <v-card class="modal_education cyan lighten-3">
+          <div v-for="(estudio, index) in educations" :key="index">
+            <v-card-subtitle class="education_institucion light-blue lighten-2">
+              Institución: {{ estudio.data.institucion }}
+            </v-card-subtitle>
+            <v-card-title class="education_titulacion">
+              {{ estudio.data.titulacion }}
+            </v-card-title>
+            <v-card-subtitle class="education_lugar">
+              Lugar de estudio: {{ estudio.data.lugar }} -
+              {{ estudio.data.annos }}
+            </v-card-subtitle>
+            <v-card-text>
+              {{ estudio.data.skill }}
+            </v-card-text>
+          </div>
         </v-card>
+        <v-btn dark class="cyan accent-3" @click="accionarEducation">
+          cerrar
+        </v-btn>
       </v-dialog>
       <!--FINAL MODAL -->
     </v-container>
@@ -69,6 +56,7 @@
 <script>
 export default {
   name: "Education",
+  props: ["educations"],
   data() {
     return {
       dialog: false,
@@ -93,6 +81,10 @@ export default {
     line-height: 100%;
     color: #c73866;
   }
+}
+
+.education_titulacion {
+  color: #01579b;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 960px) {
