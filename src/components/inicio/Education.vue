@@ -19,7 +19,7 @@
               adaptación, compromiso con las actividades que desarrollo y
               responsabilidad.
             </p>
-            <v-btn @click="accionarEducation" class="my-5">
+            <v-btn dark @click="accionarEducation" class="my-5 pink lighten-1">
               ESTUDIOS
             </v-btn>
           </div>

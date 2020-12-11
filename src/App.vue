@@ -10,9 +10,15 @@
 
 <script>
 import Navbar from "@/components/navbar/Navbar.vue";
+import { mapActions } from "vuex";
 export default {
   name: "App",
-
+  methods: {
+    ...mapActions("Inicio", ["getData_education"]),
+  },
+  created() {
+    this.getData_education();
+  },
   components: {
     Navbar,
   },
