@@ -15,12 +15,13 @@ export default {
   name: "App",
   methods: {
     ...mapActions("Inicio", ["getData_education", "getData_work"]),
-    ...mapActions("Galeria", ["obtenerImagenes"]),
+    ...mapActions("Galeria", ["obtenerImagenes", "obtenerDataProyecto"]),
   },
   created() {
     this.getData_education();
     this.getData_work();
     this.obtenerImagenes();
+    this.obtenerDataProyecto();
   },
   components: {
     Navbar,

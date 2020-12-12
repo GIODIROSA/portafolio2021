@@ -1,7 +1,29 @@
 <template>
   <div>
     <div class="galeria">
-      <h1>Hola soy galeria</h1>
+      <div class="encabezado_galeria pt-6">
+        <h1 class="titulo_galeria text-center">Galería</h1>
+        <h4 class="subtitulo_titulo text-caption text-center pb-5">
+          Proyectos de Front | Diseño UI | Diseño Gráfico
+        </h4>
+      </div>
+      <!-- CARD FRONT -->
+      <v-container>
+        <v-row>
+          <v-col
+            cols="12"
+            sm="6"
+            md="6"
+            lg="6"
+            v-for="(front, index) in proyectos"
+            :key="index"
+          >
+            <ProyectoTesis :front="front" />
+          </v-col>
+        </v-row>
+      </v-container>
+      <!--FINAL CARD FRONT -->
+
       <!-- PARALLAX -->
       <ParallaxGaleria />
       <!-- FINAL DE PARALLAX -->
@@ -41,12 +63,14 @@
 <script>
 import { mapState } from "vuex";
 import ParallaxGaleria from "@/components/galeria/ParallaxGaleria.vue";
+import ProyectoTesis from "@/components/galeria/ProyectoTesis.vue";
 export default {
   components: {
     ParallaxGaleria,
+    ProyectoTesis,
   },
   computed: {
-    ...mapState("Galeria", ["imagenes"]),
+    ...mapState("Galeria", ["imagenes", "proyectos"]),
   },
 };
 </script>
@@ -54,5 +78,11 @@ export default {
 <style lang="scss" scoped>
 .galeria {
   background: #abb6c8;
+}
+.titulo_galeria {
+  color: #dadada;
+}
+.subtitulo_titulo {
+  color: #5d7599;
 }
 </style>
