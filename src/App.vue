@@ -14,10 +14,13 @@ import { mapActions } from "vuex";
 export default {
   name: "App",
   methods: {
-    ...mapActions("Inicio", ["getData_education"]),
+    ...mapActions("Inicio", ["getData_education", "getData_work"]),
+    ...mapActions("Galeria", ["obtenerImagenes"]),
   },
   created() {
     this.getData_education();
+    this.getData_work();
+    this.obtenerImagenes();
   },
   components: {
     Navbar,

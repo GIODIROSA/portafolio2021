@@ -22,8 +22,9 @@
                 de adaptación, compromiso con las actividades que desarrollo y
                 responsabilidad.
               </p>
-              <v-btn dark class="my-3 amber darken-3">
-                Experiencia
+              <v-btn @click="showAdd" dark class="my-3 amber darken-3">
+                <span v-if="!add">Ver Experiencia</span>
+                <span v-if="add">Quitar Experiencia</span>
               </v-btn>
             </div>
           </v-col>
@@ -31,12 +32,27 @@
       </v-container>
     </div>
     <!-- FINAL SECTION DO -->
+    <Experiencias v-if="add" :experiencias="experiencias" />
   </div>
 </template>
 
 <script>
+import Experiencias from "@/components/inicio/Experiencias.vue";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "Do",
+  computed: {
+    ...mapState("Inicio", ["experiencias", "add"]),
+  },
+  methods: {
+    ...mapMutations("Inicio", ["MOSTRAR_ADD"]),
+    showAdd() {
+      this.MOSTRAR_ADD();
+    },
+  },
+  components: {
+    Experiencias,
+  },
 };
 </script>
 

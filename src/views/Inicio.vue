@@ -10,7 +10,7 @@
             </p>
           </v-col>
           <v-col cols="12" sm="12" md="6" lg="6">
-            <div class="texto_titulo ma-6">
+            <div class="texto_titulo ma-3">
               <h5>
                 Di Rosa.
               </h5>
@@ -65,7 +65,7 @@ import { mapState } from "vuex";
 export default {
   name: "Inicio",
   computed: {
-    ...mapState("Inicio",["educations"]),
+    ...mapState("Inicio", ["educations"]),
   },
   components: {
     ParallaxInicio,
