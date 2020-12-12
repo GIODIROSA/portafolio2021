@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card max-width="550" :color="front.data.color">
+    <v-card max-width="550" color="blue-grey lighten-4">
       <v-img :src="front.data.imagen" height="500px"></v-img>
 
       <v-card-title>
@@ -8,12 +8,12 @@
       </v-card-title>
 
       <v-card-subtitle>
-        <a :href="front.data.link">Proyecto de tesis</a>
+        Desarrollo: {{ front.data.desarrollo }}
       </v-card-subtitle>
 
       <v-card-actions>
         <v-btn color="blue-grey lighten-2" text>
-          Explore
+          Descripción
         </v-btn>
 
         <v-spacer></v-spacer>
