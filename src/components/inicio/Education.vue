@@ -9,19 +9,29 @@
         </v-col>
         <v-col>
           <div class="parrafo_education">
-            <h5 class="py-3">
-              education
+            <h5 class="titulo_education py-3">
+              education.
             </h5>
-            <p class=" text-caption text-justify">
-              Software developer, disfruto probar nuevas tecnologías por eso es
-              que estoy siempre preparado para aprender e integrar nuevos
-              conocimientos y habilidades. Me caracterizo por tener capacidad de
-              adaptación, compromiso con las actividades que desarrollo y
-              responsabilidad.
+            <p class="texto-education text-caption text-justify">
+              Mi objetivo es integrar mi formación académica y experiencia al
+              servicio de una organización, contribuyendo así al cumplimiento de
+              sus objetivos y su misión, permitiéndome lograr un crecimiento
+              sólido como profesional en la industria tecnológica.
             </p>
-            <v-btn dark @click="accionarEducation" class="my-5 pink lighten-1">
-              ESTUDIOS
-            </v-btn>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  dark
+                  @click="accionarEducation"
+                  class="my-5 pink lighten-1"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  ESTUDIOS
+                </v-btn>
+              </template>
+              <span>Estudios Realizados</span>
+            </v-tooltip>
           </div>
         </v-col>
       </v-row>
@@ -81,6 +91,13 @@ export default {
     line-height: 100%;
     color: #c73866;
   }
+}
+.titulo_education {
+  color: #ffb62b;
+}
+
+.texto-education {
+  color: #5d7599;
 }
 
 .education_titulacion {

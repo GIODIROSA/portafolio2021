@@ -14,7 +14,11 @@ import { mapActions } from "vuex";
 export default {
   name: "App",
   methods: {
-    ...mapActions("Inicio", ["getData_education", "getData_work"]),
+    ...mapActions("Inicio", [
+      "getData_education",
+      "getData_work",
+      "getData_referencias",
+    ]),
     ...mapActions("Galeria", ["obtenerImagenes", "obtenerDataProyecto"]),
   },
   created() {
@@ -22,6 +26,7 @@ export default {
     this.getData_work();
     this.obtenerImagenes();
     this.obtenerDataProyecto();
+    this.getData_referencias();
   },
   components: {
     Navbar,

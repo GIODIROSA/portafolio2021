@@ -5,6 +5,7 @@ export default {
   state: {
     educations: [],
     experiencias: [],
+    referencias: [],
     add: false,
   },
   getters: {},
@@ -14,6 +15,9 @@ export default {
     },
     OBTENER_WORK(state, payload) {
       state.experiencias = payload;
+    },
+    OBTENER_REFERENCIAS(state, payload) {
+      state.referencias = payload;
     },
     MOSTRAR_ADD(state) {
       state.add = !state.add;
@@ -59,6 +63,27 @@ export default {
           });
       } catch (error) {
         console.log("hubo un error en: ", error);
+      }
+    },
+
+    async getData_referencias({ commit }) {
+      try {
+        await firebase
+          .firestore()
+          .collection("referencias")
+          .orderBy("identificador", "asc")
+          .onSnapshot((snapshot) => {
+            let referencias = [];
+            snapshot.forEach((doc) => {
+              referencias.push({
+                id: doc.id,
+                data: doc.data(),
+              });
+            });
+            commit("OBTENER_REFERENCIAS", referencias);
+          });
+      } catch (error) {
+        console.log("el error esta en : ", error);
       }
     },
   }, //final de actions

@@ -11,7 +11,7 @@
           </v-col>
           <v-col cols="12" sm="12" md="6" lg="6">
             <div class="texto_titulo ma-3">
-              <h5>
+              <h5 class="titulo_dirosa py-3">
                 Di Rosa.
               </h5>
               <p class="parrafo_titulo text-caption text-justify">
@@ -90,7 +90,12 @@ export default {
     padding: 150px 0px;
   }
 }
-
+.titulo_dirosa {
+  color: #7097ab;
+}
+.parrafo_titulo {
+  color: #5d7599;
+}
 @media only screen and (min-width: 300px) and (max-width: 960px) {
   .parallaxInicio {
     display: none;

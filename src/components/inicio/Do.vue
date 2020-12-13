@@ -12,20 +12,31 @@
           </v-col>
           <v-col>
             <div class="parrafo_do">
-              <h5 class="py-3">
-                work
+              <h5 class="subtitulo_do py-3">
+                work.
               </h5>
-              <p class=" text-caption text-justify">
+              <p class="texto-do text-caption text-justify">
                 Software developer, disfruto probar nuevas tecnologías por eso
                 es que estoy siempre preparado para aprender e integrar nuevos
                 conocimientos y habilidades. Me caracterizo por tener capacidad
                 de adaptación, compromiso con las actividades que desarrollo y
                 responsabilidad.
               </p>
-              <v-btn @click="showAdd" dark class="my-3 amber darken-3">
-                <span v-if="!add">Ver Experiencia</span>
-                <span v-if="add">Quitar Experiencia</span>
-              </v-btn>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    @click="showAdd"
+                    dark
+                    class="my-3 amber darken-3"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <span v-if="!add">Ver Experiencia</span>
+                    <span v-if="add">Quitar Experiencia</span>
+                  </v-btn>
+                </template>
+                <span>Experiencia Laboral</span>
+              </v-tooltip>
             </div>
           </v-col>
         </v-row>
@@ -66,6 +77,12 @@ export default {
     line-height: 90%;
     color: #fe676e;
   }
+}
+.subtitulo_do {
+  color: #7097ab;
+}
+.texto-do {
+  color: #5d7599;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 960px) {
