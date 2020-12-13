@@ -1,16 +1,18 @@
 <template>
-  <nav>
-    <v-toolbar dense elevation="1" class="navPrincipal purple lighten-4">
+  <nav class="navbar_portafolio">
+    <v-app-bar dark flat color="purple lighten-4" app>
       <v-toolbar-title>
-        <h5 class="white--text">
-          Giovanni Di Rosa
-        </h5>
+        <router-link class="link_inicio" :to="{ name: 'Inicio' }">
+          <h5 class="white--text">
+            Giovanni Di Rosa
+          </h5>
+        </router-link>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"> </v-app-bar-nav-icon>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-navigation-drawer
       app
@@ -53,8 +55,8 @@ export default {
         },
         {
           icon: "mdi-account-star-outline",
-          text: "Quien soy",
-          route: "/quiensoy",
+          text: "Contacto",
+          route: "/contacto",
         },
       ],
       dialog: false,
@@ -67,5 +69,8 @@ export default {
 <style lang="scss" scoped>
 .textNavigation {
   color: #001b48;
+}
+.link_inicio {
+  text-decoration: none;
 }
 </style>
