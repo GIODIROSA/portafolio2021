@@ -3,7 +3,9 @@
     <Navbar class="navbar_portafolio" />
 
     <v-main class="main">
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </v-main>
   </v-app>
 </template>
@@ -47,5 +49,17 @@ export default {
 html,
 body {
   font-family: "Lato", sans-serif;
+}
+// CONFIGURACION DE LA ANIMACION
+.fade-enter-active {
+  transition: all 1s ease;
+}
+.fade-leave-active {
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter,
+.fade-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
 }
 </style>
